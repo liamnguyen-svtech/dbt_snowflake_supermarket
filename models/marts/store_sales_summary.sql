@@ -1,4 +1,4 @@
-{{ config(required_docs=false, required_tests=None) }}
+{{ config(required_docs=false) }}
 
 WITH store_sales AS (
     SELECT

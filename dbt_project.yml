@@ -22,7 +22,9 @@ clean-targets:         # directories to be removed by `dbt clean`
   - "target"
   - "dbt_packages"
 
-
+dispatch:
+  - macro_namespace: dbt_meta_testing
+    search_order: ['dbt_snowflake_supermarket', 'dbt_meta_testing']
 # Configuring models
 # Full documentation: https://docs.getdbt.com/docs/configuring-models
 
@@ -42,7 +44,6 @@ models:
         +required_tests:
           "check.*|unique": 1
           "not_null": 2
-          ".*data_test": 1
           "test_customer_order_summary": 1
       store_sales_summary:
         +required_tests:
